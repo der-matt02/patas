@@ -17,14 +17,16 @@ int main(){
 
     int cont=1;
     while(!feof(archivo)){
-        fgets(buffer,100,archivo); //fgetc lee caracter por carater, junto con un for para que recorra la linea, fgets lee toda la linea
-        printf("la primera linea %i es %s",cont ,buffer);
-        cont++;
+        fscanf(buffer,100,archivo); //fgetc lee caracter por carater, junto con un for para que recorra la linea, fgets lee toda la linea
+        if(pi% 10==0){
+            fprintf(archivo, "xd \n");
+            }else{
+                fprintf(archivo, "%d \n", pi);
+            }
+            cont++;
+        
     }
     
-    fprintf(archivo,"\n");
-
-    fputs("se agrega una quinta linea",archivo); //agrega limeas
   
     fclose(archivo);
     fclose(archivo1);
